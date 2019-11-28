@@ -1,0 +1,6 @@
+Put MonoGame nuget packages here, there would be:
+
+* dotnet-mgcb.3.8.0-beta20191128.nupkg
+* MonoGame.Content.Builder.3.8.0-beta20191128.nupkg
+* MonoGame.Framework.Android.3.8.0-beta20191128.nupkg
+* MonoGame.Framework.Content.Pipeline.3.8.0-beta20191128.nupkg
