@@ -1,8 +1,11 @@
+using System;
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using Android.Views;
 using Microsoft.Xna.Framework;
+using Serilog;
+using Serilog.Core;
 
 namespace Demo.Android
 {
@@ -23,12 +26,21 @@ namespace Demo.Android
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-
+            InitLogger();
             _game = new Game1();
             _view = _game.Services.GetService(typeof(View)) as View;
 
             SetContentView(_view);
             _game.Run();
+        }
+
+        private void InitLogger()
+        {
+            Log.Logger = new LoggerConfiguration()
+                        .WriteTo.AndroidLog()
+                        .Enrich.WithProperty(Constants.SourceContextPropertyName, "MyGame") //Sets the Tag field.
+                        .Destructure.ByTransforming<Vector2>(_ => new { _.X, _.Y })
+                        .CreateLogger();
         }
     }
 }
