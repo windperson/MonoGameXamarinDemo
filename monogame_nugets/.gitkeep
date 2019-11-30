@@ -4,3 +4,4 @@ Put MonoGame nuget packages here, there would be:
 * MonoGame.Content.Builder.3.8.0-beta20191128.nupkg
 * MonoGame.Framework.Android.3.8.0-beta20191128.nupkg
 * MonoGame.Framework.Content.Pipeline.3.8.0-beta20191128.nupkg
+* MonoGame.Framework.iOS.3.8.0-beta20191128.nupkg
